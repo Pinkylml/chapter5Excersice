@@ -1,0 +1,42 @@
+# Gradle build outputs and caches
+.gradle/
+build/
+
+# IDE configurations
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Visual Studio Code
+.vscode/
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+# Compiled Java classes and packaging
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Log files
+*.log
