@@ -7,6 +7,8 @@
     <persistence-unit name="EnterprisePU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         
+        <class>com.enterprise.domain.Account</class>
+        
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/Chap5Excersices"/>
