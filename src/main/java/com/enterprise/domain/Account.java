@@ -19,6 +19,13 @@ public class Account extends AbstractAuditableEntity {
         this.balance = balance;
     }
 
+    @PreRemove
+    protected void validateBeforeDelete() {
+        if (this.balance > 0) {
+            throw new IllegalStateException("Cannot delete account with balance greater than 0");
+        }
+    }
+
     public Long getId() {
         return id;
     }

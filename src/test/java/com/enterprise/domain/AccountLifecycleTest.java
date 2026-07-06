@@ -19,4 +19,19 @@ public class AccountLifecycleTest extends AbstractJPATest {
         System.out.println("Saved Account Lifecycle State: " + account);
         System.out.println("Automatic Generation Timestamp: " + account.getCreatedAt());
     }
+
+    @Test
+    public void shouldPreventDeletionWhenBalanceIsPositive() {
+        // 1. Create and persist an account with a balance
+        Account account = new Account("Bob", 100.0);
+        em.persist(account);
+
+        // Flush to ensure it is written to the database context
+        em.flush();
+
+        // 2. Verify that calling em.remove() triggers our exception
+        Assertions.assertThrows(IllegalStateException.class, () -> {
+            em.remove(account);
+        });
+    }
 }
